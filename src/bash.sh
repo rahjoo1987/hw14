@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# File paths for storing tasks
+
 UNDONE_FILE="undone_tasks.txt"
 DONE_FILE="done_tasks.txt"
 DELETED_FILE="deleted_tasks.txt"
 
-# Create files if they don't exist
+
 touch "$UNDONE_FILE"
 touch "$DONE_FILE"
 touch "$DELETED_FILE"
 
-# Function to add a new task to the list of undone tasks
+
 add_task() {
     echo "$1" >> "$UNDONE_FILE"
     echo "Task added successfully."
 }
 
-# Function to display uncompleted tasks
+
 display_undone_tasks() {
     if [[ -s "$UNDONE_FILE" ]]; then
         echo "Uncompleted Tasks:"
@@ -26,7 +26,7 @@ display_undone_tasks() {
     fi
 }
 
-# Function to move an undone task to the list of completed tasks
+
 complete_task() {
     task_number=$1
 
@@ -44,7 +44,7 @@ complete_task() {
     fi
 }
 
-# Function to display completed tasks
+
 display_done_tasks() {
     if [[ -s "$DONE_FILE" ]]; then
         echo "Completed Tasks:"
@@ -54,7 +54,7 @@ display_done_tasks() {
     fi
 }
 
-# Function to delete a task and move it to the list of deleted tasks
+
 delete_task() {
     task_number=$1
 
@@ -72,7 +72,7 @@ delete_task() {
     fi
 }
 
-# Function to display deleted tasks
+
 display_deleted_tasks() {
     if [[ -s "$DELETED_FILE" ]]; then
         echo "Deleted Tasks:"
@@ -82,7 +82,7 @@ display_deleted_tasks() {
     fi
 }
 
-# Function to search for a task in any of the lists
+
 search_tasks() {
     keyword=$1
 
@@ -90,7 +90,7 @@ search_tasks() {
     grep -n "$keyword" "$UNDONE_FILE" "$DONE_FILE" "$DELETED_FILE"
 }
 
-# Main loop
+
 while true; do
     echo "ToDo Program"
     echo "1. Add new task"
@@ -114,7 +114,10 @@ while true; do
             display_undone_tasks
             ;;
         3)
+
+
             # shellcheck disable=SC1073
             # shellcheck disable=SC1073
-            # shellcheck disable=SC1009
+            # shellcheck disable=SC1073
+            # shellcheck disable=SC1073
             read -rp "Enter the task
